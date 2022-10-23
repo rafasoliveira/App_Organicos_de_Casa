@@ -29,7 +29,7 @@ public class Splash extends AppCompatActivity {
                 });
             }
         };
-        timer.schedule(timerTask, 8000);
+        timer.schedule(timerTask, 4000);
     }
 
     private void gotoMainActivity() {
