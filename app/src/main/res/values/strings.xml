@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Organicos de Casa</string>
-    <string name="ola_mundo">Olá Mundo!</string>
+    <string name="saudacao">Bem vindo !</string>
 </resources>
