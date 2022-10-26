@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,33 +7,75 @@
     tools:context=".MainActivity">
 
     <View
-        android:id="@+id/barLogo"
-        style="@style/barLogo"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/containerLogo"
+        style="@style/ContainerLogo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        />
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="190dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
         android:src="@drawable/odclogo_linhatransp"
-        app:layout_constraintTop_toTopOf="@id/barLogo"
-        app:layout_constraintStart_toStartOf="@id/barLogo"
-        app:layout_constraintEnd_toEndOf="@id/barLogo"/>
+        app:layout_constraintEnd_toEndOf="@id/containerLogo"
+        app:layout_constraintStart_toStartOf="@id/containerLogo"
+        app:layout_constraintTop_toTopOf="@id/containerLogo" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="casual"
         android:text="@string/saudacao"
         android:textSize="15dp"
-        android:fontFamily="casual"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/containerLogo"
+        app:layout_constraintStart_toStartOf="@id/containerLogo"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-        app:layout_constraintStart_toStartOf="@id/barLogo"
-        app:layout_constraintEnd_toEndOf="@id/barLogo"
-        android:layout_marginTop="5dp"/>
+    <View
+        android:id="@+id/continerNavegacao"
+        style="@style/ContainerNavegacao"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgBtnHome"
+        style="@style/BotaoNavegacao"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/continerNavegacao"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <ImageButton
+        android:id="@+id/imgBtnSearch"
+        style="@style/BotaoNavegacao"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnHome"
+        app:layout_constraintTop_toTopOf="@+id/continerNavegacao"
+        app:srcCompat="@drawable/ic_btn_search" />
+
+    <ImageButton
+        android:id="@+id/imgBtnCalendar"
+        style="@style/BotaoNavegacao"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnSearch"
+        app:layout_constraintTop_toTopOf="@+id/continerNavegacao"
+        app:srcCompat="@drawable/ic_btn_calendar" />
+
+    <ImageButton
+        android:id="@+id/imgBtnPerfil"
+        style="@style/BotaoNavegacao"
+        app:layout_constraintEnd_toEndOf="@+id/continerNavegacao"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnCalendar"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnCalendar"
+        app:srcCompat="@drawable/ic_btn_person" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
