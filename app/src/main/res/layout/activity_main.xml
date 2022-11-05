@@ -25,6 +25,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="casual"
@@ -68,6 +69,7 @@
     <ImageButton
         android:id="@+id/imgBtnPerfil"
         style="@style/BotaoNavegacao"
+        android:onClick="abrirFormLogin"
         app:layout_constraintEnd_toEndOf="@+id/continerNavegacao"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imgBtnCalendar"

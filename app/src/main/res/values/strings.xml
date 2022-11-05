@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Organicos de Casa</string>
     <string name="saudacao">Bem vindo !</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="txt_cadastro">Crie uma conta</string>
 </resources>

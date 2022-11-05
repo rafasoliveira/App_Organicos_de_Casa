@@ -1,7 +1,12 @@
 package com.odc.organicosdecasa;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
+import com.google.firebase.ktx.Firebase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,7 +15,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        }
 
+    public void abrirFormLogin(View view){
+
+        Intent intent = new Intent(this, FormLogin.class);
+        startActivity(intent);
 
     }
 }

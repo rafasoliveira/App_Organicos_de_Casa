@@ -10,9 +10,10 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="1200px"
-        android:layout_height="1200px"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
         android:src="@drawable/logo_odc6"
+        android:layout_margin="50dp"
         app:layout_constraintBottom_toBottomOf="@id/site"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
