@@ -1,8 +1,10 @@
-package com.odc.organicosdecasa;
+package com.odc.organicosdecasa.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.odc.organicosdecasa.R;
 
 public class FormCadastro extends AppCompatActivity {
 

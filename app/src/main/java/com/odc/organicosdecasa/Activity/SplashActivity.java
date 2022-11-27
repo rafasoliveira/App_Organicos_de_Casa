@@ -1,14 +1,16 @@
-package com.odc.organicosdecasa;
+package com.odc.organicosdecasa.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.odc.organicosdecasa.R;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Splash extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     private final Timer timer = new Timer();
     TimerTask timerTask;
@@ -29,7 +31,7 @@ public class Splash extends AppCompatActivity {
                 });
             }
         };
-        timer.schedule(timerTask, 4000);
+        timer.schedule(timerTask, 3000);
     }
 
     private void gotoMainActivity() {

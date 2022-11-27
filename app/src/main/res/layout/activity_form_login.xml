@@ -13,10 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
-        tools:context=".FormLogin">
+        tools:context=".Activity.FormLogin">
 
         <ImageView
-            android:id="@+id/logo"
+            android:id="@+id/image_Logo"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@drawable/odclogo_baixo_transp"
@@ -28,14 +28,14 @@
         <View
             style="@style/ContainerComponents"
             android:id="@+id/containerComponents"
-            app:layout_constraintTop_toBottomOf="@id/logo"
+            app:layout_constraintTop_toBottomOf="@id/image_Logo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <EditText
             style="@style/Edit_Text"
             android:id="@+id/edit_email"
-            android:hint="@string/email"
+            android:hint="@string/txtEmail"
             android:textColorHint="@color/brownwood"
             android:drawableRight="@drawable/ic_email"
             android:inputType="textEmailAddress"
@@ -47,7 +47,7 @@
         <EditText
             style="@style/Edit_Text"
             android:id="@+id/edit_senha"
-            android:hint="@string/senha"
+            android:hint="@string/txtSenha"
             android:textColorHint="@color/brownwood"
             android:drawableRight="@drawable/ic_eye"
             android:inputType="numberPassword"
@@ -59,7 +59,7 @@
         <androidx.appcompat.widget.AppCompatButton
             style="@style/Button"
             android:id="@+id/bt_entrar"
-            android:text="@string/entrar"
+            android:text="@string/txtEntrar"
             app:layout_constraintTop_toBottomOf="@id/edit_senha"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="50dp"
-            android:text="@string/txt_cadastro"
+            android:text="@string/txtCadastreSe"
             android:textColor="@color/brownwood"
             android:textSize="20dp"
             android:textStyle="bold"

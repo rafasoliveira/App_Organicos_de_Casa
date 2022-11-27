@@ -1,8 +1,31 @@
 <resources>
-    <string name="app_name">Organicos de Casa</string>
-    <string name="saudacao">Bem vindo !</string>
-    <string name="email">Email</string>
-    <string name="senha">Senha</string>
-    <string name="entrar">Entrar</string>
-    <string name="txt_cadastro">Crie uma conta</string>
+    <string name="app_name">Orgânicos de Casa</string>
+    <string name="txtSaudacao">Olá, bem vindo !!!</string>
+    <string name="txtEmail">Email</string>
+    <string name="txtSenha">Senha</string>
+    <string name="txtEntrar">Entrar</string>
+    <string name="txtCadastreSe">Cadastre-se aqui!</string>
+    <string name="txtCadastro">Cadastro</string>
+    <string name="txtOferta1">35% de desconto</string>
+    <string name="txtOferta2">01 Nov - 31 Dez</string>
+    <string name="txtBarSearch">Pesquisar produto favorito</string>
+    <string name="txtCategoria">Categoria</string>
+    <string name="txtProdutos">Produtos</string>
+    <string name="txtHome">Início</string>
+    <string name="txtCarrinho">Carrinho</string>
+    <string name="txtProfile">Perfil</string>
+    <string name="txtSearch">Pesquisa</string>
+    <string name="txtSchedule">Agenda</string>
+    <string name="txtVermais"><![CDATA[Ver mais >]]></string>
+    <string name="txtMeuCarrinho">Meu Carrinho</string>
+    <string name="txtTotaldeItens">Total de Itens</string>
+    <string name="txtCarrinhoVazio">Seu carrinho está vazio!</string>
+    <string name="txtDescricao">Descrição</string>
+    <string name="txtPrecoTotal">Preço Total</string>
+    <string name="txtAdicionar">Adicionar</string>
+    <string name="txtFavorito">Favorito</string>
+    <string name="txtListaCompra">Lista de Compra</string>
+    <string name="txtConfirmar">Confirmar</string>
+    <string name="txtTaxaEntrega">Taxa de entrega</string>
+    <string name="txtTaxa">Taxa</string>
 </resources>

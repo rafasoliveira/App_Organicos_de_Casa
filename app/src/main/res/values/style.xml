@@ -3,8 +3,8 @@
 
     <style name="ContainerLogo">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">80dp</item>
-        <item name="android:background">@color/white</item>
+        <item name="android:layout_height">65dp</item>
+
     </style>
 
     <style name="ContainerNavegacao">
@@ -14,11 +14,11 @@
     </style>
 
     <style name="BotaoNavegacao">
-        <item name="android:layout_width">75dp</item>
-        <item name="android:layout_height">47dp</item>
-        <item name="android:background"></item>
-        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">20dp</item>
-        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">20dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="backgroundTint">@color/greenodc</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">3dp</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">3dp</item>
     </style>
 
     <style name="ContainerComponents">
@@ -52,6 +52,16 @@
         <item name="android:textSize">16dp</item>
         <item name="android:textStyle">bold</item>
         <item name="background">@drawable/bt_entrar</item>
+    </style>
+
+    <style name="banner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:background">@drawable/botton_banner</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_margin">20dp</item>
+
+
     </style>
 
 </resources>
