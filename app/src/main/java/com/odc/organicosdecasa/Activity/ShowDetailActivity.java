@@ -12,7 +12,7 @@ import com.odc.organicosdecasa.Domain.ItemDomain;
 import com.odc.organicosdecasa.Helper.ManagementCart;
 import com.odc.organicosdecasa.R;
 
-public class ShowDetailsActivity extends AppCompatActivity {
+public class ShowDetailActivity extends AppCompatActivity {
     private TextView addToCarBtn;
     private TextView tituloTxt, taxaTxt, descricaoTxt, numOrdemTxt, precoTotalTxt, estrelaTxt, favoritoTxt, listaCompraTxt;
     private ImageView plusBtn, minusBtn, picItem;
@@ -40,13 +40,13 @@ public class ShowDetailsActivity extends AppCompatActivity {
                 .into(picItem);
 
         tituloTxt.setText(object.getNome());
-        taxaTxt.setText("R$ "+object.getTaxa());
+        taxaTxt.setText("R$ " + object.getTaxa());
         descricaoTxt.setText(object.getDescricao());
         numOrdemTxt.setText(String.valueOf(numOrdem));
-        estrelaTxt.setText(object.getEstrela()+"");
+        estrelaTxt.setText(object.getEstrela());
         listaCompraTxt.setText(object.getListaCompra()+" Lista de compra");
         favoritoTxt.setText(object.getFavorito()+" Favorito");
-        precoTotalTxt.setText("R$ "+Math.round(numOrdem * object.getTaxa()));
+        precoTotalTxt.setText("R$ " + Math.round(numOrdem * object.getTaxa()));
 
 
      plusBtn.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +54,7 @@ public class ShowDetailsActivity extends AppCompatActivity {
          public void onClick(View v) {
              numOrdem = numOrdem + 1;
              numOrdemTxt.setText(String.valueOf(numOrdem));
-             precoTotalTxt.setText("R$ "+Math.round(numOrdem * object.getTaxa()));
+             precoTotalTxt.setText("R$ " + Math.round(numOrdem * object.getTaxa()));
          }
      });
 
@@ -65,7 +65,7 @@ public class ShowDetailsActivity extends AppCompatActivity {
                  numOrdem = numOrdem - 1;
              }
              numOrdemTxt.setText(String.valueOf(numOrdem));
-             precoTotalTxt.setText("R$ "+Math.round(numOrdem * object.getTaxa()));
+             precoTotalTxt.setText("R$ " + Math.round(numOrdem * object.getTaxa()));
          }
      });
 

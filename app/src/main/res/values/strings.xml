@@ -5,7 +5,6 @@
     <string name="txtSenha">Senha</string>
     <string name="txtEntrar">Entrar</string>
     <string name="txtCadastreSe">Cadastre-se aqui!</string>
-    <string name="txtCadastro">Cadastro</string>
     <string name="txtOferta1">35% de desconto</string>
     <string name="txtOferta2">01 Nov - 31 Dez</string>
     <string name="txtBarSearch">Pesquisar produto favorito</string>
@@ -28,4 +27,5 @@
     <string name="txtConfirmar">Confirmar</string>
     <string name="txtTaxaEntrega">Taxa de entrega</string>
     <string name="txtTaxa">Taxa</string>
+    <string name="telaCadastro">Tela de Cadastro</string>
 </resources>

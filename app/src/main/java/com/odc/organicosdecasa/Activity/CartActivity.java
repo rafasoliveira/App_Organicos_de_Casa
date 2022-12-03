@@ -39,9 +39,19 @@ public class CartActivity extends AppCompatActivity {
 
     private void bottomNavigation() {
         LinearLayout homeBtn = findViewById(R.id.homeBtn);
+        LinearLayout seachBtn = findViewById(R.id.seachBtn);
         LinearLayout carBtn = findViewById(R.id.carBtn);
+        LinearLayout scheduleBtn = findViewById(R.id.scheduleBtn);
+        LinearLayout profileBtn = findViewById(R.id.profileBtn);
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartActivity.this, MainActivity.class));
+            }
+        });
+
+        seachBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CartActivity.this, MainActivity.class));
@@ -52,6 +62,20 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CartActivity.this, CartActivity.class));
+            }
+        });
+
+        scheduleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartActivity.this, MainActivity.class));
+            }
+        });
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartActivity.this, FormLogin.class));
             }
         });
     }
@@ -78,7 +102,7 @@ public class CartActivity extends AppCompatActivity {
 
     private void calcularCarrinho() {
         double percentTaxa = 0.02;   //se necessário alterar este item para o preço do imposto/taxa
-        double entrega = 10;        // se necessário alterar este item, preço da frete/entrega
+        double entrega = 10.00;        // se necessário alterar este item, preço da frete/entrega
 
         taxa = Math.round((managementCart.getTotalTaxa() * percentTaxa) * 100.0)/100.0;
         double total = Math.round((managementCart.getTotalTaxa() + taxa + entrega) * 100.0)/100.0;

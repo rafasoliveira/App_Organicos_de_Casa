@@ -32,9 +32,19 @@ private RecyclerView recyclerViewCategoriaList, recyclerViewProdutoList;
 
     private void bottomNavigation() {
         LinearLayout homeBtn = findViewById(R.id.homeBtn);
+        LinearLayout seachBtn = findViewById(R.id.seachBtn);
         LinearLayout carBtn = findViewById(R.id.carBtn);
+        LinearLayout scheduleBtn = findViewById(R.id.scheduleBtn);
+        LinearLayout profileBtn = findViewById(R.id.profileBtn);
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
+
+        seachBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, MainActivity.class));
@@ -45,6 +55,20 @@ private RecyclerView recyclerViewCategoriaList, recyclerViewProdutoList;
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, CartActivity.class));
+            }
+        });
+
+        scheduleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FormLogin.class));
             }
         });
     }
@@ -100,13 +124,5 @@ private RecyclerView recyclerViewCategoriaList, recyclerViewProdutoList;
 
         adapter = new CategoriaAdapter(categoryList);
         recyclerViewCategoriaList.setAdapter(adapter);
-    }
-
-
-
-    public void abrirFormLogin(View view){
-
-        Intent intent = new Intent(this, FormLogin.class);
-        startActivity(intent);
     }
 }
