@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.odc.organicosdecasa.Activity.ShowDetailsActivity;
+import com.odc.organicosdecasa.Activity.ShowDetailActivity;
 import com.odc.organicosdecasa.Domain.ItemDomain;
 import com.odc.organicosdecasa.R;
 
@@ -47,7 +47,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
                 .into(holder.pic);
 
         holder.addBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(holder.itemView.getContext(), ShowDetailsActivity.class);
+            Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
             intent.putExtra("objet", ProdutoDomains.get(position));
             holder.itemView.getContext().startActivity(intent);
         });

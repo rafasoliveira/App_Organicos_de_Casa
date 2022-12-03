@@ -49,10 +49,7 @@ public class CarrinhoListAdapter extends RecyclerView.Adapter<CarrinhoListAdapte
                 .getIdentifier(listItemSelecionado.get(position).getPic(),"drawable",
                         holder.itemView.getContext().getPackageName());
 
-        Glide.with(holder.itemView.getContext())
-                .load(drawableReourceId)
-                .into(holder.pic);
-
+        Glide.with(holder.itemView.getContext()).load(drawableReourceId).into(holder.pic);
 
         holder.plusItem.setOnClickListener(v -> managementCart.plusNumberItem(listItemSelecionado, position, () -> {
             notifyDataSetChanged();
