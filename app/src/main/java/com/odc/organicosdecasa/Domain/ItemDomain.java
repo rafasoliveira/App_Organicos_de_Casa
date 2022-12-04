@@ -7,10 +7,10 @@ public class ItemDomain implements Serializable {
     private String pic;
     private String descricao;
     private Double taxa;
-    private int estrela;
+    private Double estrela;
     private int numeroNoCarrinho;
 
-    public ItemDomain(String nome, String pic, String descricao, Double taxa, int estrela) {
+    public ItemDomain(String nome, String pic, String descricao, Double taxa, Double estrela) {
         this.nome = nome;
         this.pic = pic;
         this.descricao = descricao;
@@ -59,11 +59,11 @@ public class ItemDomain implements Serializable {
         this.taxa = taxa;
     }
 
-    public int getEstrela() {
+    public Double getEstrela() {
         return estrela;
     }
 
-    public void setEstrela(int estrela) {
+    public void setEstrela(Double estrela) {
         this.estrela = estrela;
     }
 
