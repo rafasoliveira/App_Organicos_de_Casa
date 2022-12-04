@@ -12,6 +12,8 @@ import com.odc.organicosdecasa.Domain.ItemDomain;
 import com.odc.organicosdecasa.Helper.ManagementCart;
 import com.odc.organicosdecasa.R;
 
+import java.text.DecimalFormat;
+
 public class ShowDetailActivity extends AppCompatActivity {
     private TextView addToCarBtn;
     private TextView tituloTxt, taxaTxt, descricaoTxt, numOrdemTxt, precoTotalTxt, estrelaTxt, favoritoTxt, listaCompraTxt;
@@ -19,6 +21,8 @@ public class ShowDetailActivity extends AppCompatActivity {
     private ItemDomain object;
     private int numOrdem = 1;
     private ManagementCart managementCart;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,7 @@ public class ShowDetailActivity extends AppCompatActivity {
     }
 
     private void getBundle() {
+        DecimalFormat df = new DecimalFormat("#,##0.00");
         object = (ItemDomain) getIntent().getSerializableExtra("object");
 
         int drawableResourceId = this.getResources().getIdentifier(object.getPic(),"drawable", this.getPackageName());
@@ -40,17 +45,18 @@ public class ShowDetailActivity extends AppCompatActivity {
                 .into(picItem);
 
         tituloTxt.setText(object.getNome());
-        taxaTxt.setText("R$ " + object.getTaxa());
+        taxaTxt.setText("R$ " + df.format(object.getTaxa()));
         descricaoTxt.setText(object.getDescricao());
         numOrdemTxt.setText(String.valueOf(numOrdem));
         estrelaTxt.setText(object.getEstrela() + "");
+        precoTotalTxt.setText("R$ " + df.format(Math.round(numOrdem * object.getTaxa())));
 
         plusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numOrdem=numOrdem + 1;
+                numOrdem = numOrdem + 1;
                 numOrdemTxt.setText(String.valueOf(numOrdem));
-                precoTotalTxt.setText(String.valueOf(numOrdem * object.getTaxa()));
+                precoTotalTxt.setText("R$ " + df.format(Math.round(numOrdem * object.getTaxa())));
             }
         });
 
@@ -61,7 +67,7 @@ public class ShowDetailActivity extends AppCompatActivity {
                     numOrdem = numOrdem - 1;
                 }
                 numOrdemTxt.setText(String.valueOf(numOrdem));
-                precoTotalTxt.setText(String.valueOf(numOrdem * object.getTaxa()));
+                precoTotalTxt.setText("R$ " + df.format(Math.round(numOrdem * object.getTaxa())));
             }
         });
 

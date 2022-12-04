@@ -6,10 +6,10 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginLeft="16dp"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="5dp"
     android:layout_marginEnd="16dp"
     android:layout_marginRight="16dp"
-    android:layout_marginBottom="10dp"
+    android:layout_marginBottom="5dp"
     android:background="@drawable/background_cart">
 
     <ImageView
@@ -35,10 +35,10 @@
         android:layout_marginTop="16dp"
         android:text="titulo"
         android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/pic"
-        app:layout_constraintTop_toTopOf="@+id/pic"
-        tools:textSize="20sp" />
+        app:layout_constraintTop_toTopOf="@+id/pic" />
 
     <TextView
         android:id="@+id/taxaCadaitem"
@@ -48,11 +48,11 @@
         android:layout_marginRight="25dp"
         android:text="R$ 0.00"
         android:textColor="@color/black"
+        android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="@+id/ttituloxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ttituloxt"
-        tools:textSize="20sp" />
+        app:layout_constraintTop_toTopOf="@+id/ttituloxt" />
 
     <TextView
         android:id="@+id/totalCadaitem"
@@ -60,11 +60,11 @@
         android:layout_height="wrap_content"
         android:text="R$ 0.00"
         android:textColor="@color/black"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout5"
         app:layout_constraintEnd_toEndOf="@+id/taxaCadaitem"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout5"
-        tools:textSize="20sp" />
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout5" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout5"
@@ -77,12 +77,10 @@
 
         <ImageView
             android:id="@+id/minusCardBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="25dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
             app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +89,7 @@
 
         <ImageView
             android:id="@+id/plusCardBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
@@ -106,36 +104,28 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
+            android:background="@drawable/search_bt_background"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/white_circle" />
-
             <TextView
                 android:id="@+id/numeroItemTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
-                android:textColor="@color/black"
+                android:text="01"
+                android:textColor="@color/brownwood"
+                android:textSize="18dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/imageView5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/imageView5"
-                app:layout_constraintTop_toTopOf="@id/imageView5"
-                tools:textSize="18dp" />
+                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
+                app:layout_constraintEnd_toEndOf="@+id/constraintLayout4"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout4" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

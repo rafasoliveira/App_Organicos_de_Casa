@@ -16,6 +16,8 @@ import com.odc.organicosdecasa.Helper.ManagementCart;
 import com.odc.organicosdecasa.Interface.ChangeNumberItemsListener;
 import com.odc.organicosdecasa.R;
 
+import java.text.DecimalFormat;
+
 public class CartActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
@@ -23,6 +25,7 @@ public class CartActivity extends AppCompatActivity {
     private TextView totalTaxaTxt, taxaTxt, entregaTxt, totalTxt, vazioTxt;
     private Double taxa;
     private ScrollView scrollView;
+    DecimalFormat df = new DecimalFormat("#,##0.00");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,16 +105,16 @@ public class CartActivity extends AppCompatActivity {
 
     private void calcularCarrinho() {
         double percentTaxa = 0.00;   //se necessário alterar este item para o preço do imposto/taxa
-        double entrega = 10.00;        // se necessário alterar este item, preço da frete/entrega
+        double entrega = 0.00;        // se necessário alterar este item, preço da frete/entrega
 
         taxa = Math.round((managementCart.getTotalTaxa() * percentTaxa) * 100.0)/100.0;
         double total = Math.round((managementCart.getTotalTaxa() + taxa + entrega) * 100.0)/100.0;
         double itemTotal = Math.round((managementCart.getTotalTaxa()*100.0)/100.0);
 
-        totalTaxaTxt.setText("R$ " + itemTotal);
-        taxaTxt.setText("R$ " + taxa);
-        entregaTxt.setText("R$ " + entrega);
-        totalTxt.setText("R$ " + total);
+        totalTaxaTxt.setText("R$ " + df.format(itemTotal));
+        taxaTxt.setText("R$ " + df.format(taxa));
+        entregaTxt.setText("R$ " + df.format(entrega));
+        totalTxt.setText("R$ " + df.format(total));
     }
 
     private void initView() {
