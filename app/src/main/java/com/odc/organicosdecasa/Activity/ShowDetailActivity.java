@@ -32,7 +32,7 @@ public class ShowDetailActivity extends AppCompatActivity {
     }
 
     private void getBundle() {
-        object = (ItemDomain)getIntent().getSerializableExtra("object");
+        object = (ItemDomain) getIntent().getSerializableExtra("object");
 
         int drawableResourceId = this.getResources().getIdentifier(object.getPic(),"drawable", this.getPackageName());
         Glide.with(this)
@@ -43,46 +43,42 @@ public class ShowDetailActivity extends AppCompatActivity {
         taxaTxt.setText("R$ " + object.getTaxa());
         descricaoTxt.setText(object.getDescricao());
         numOrdemTxt.setText(String.valueOf(numOrdem));
-        estrelaTxt.setText(object.getEstrela());
-        listaCompraTxt.setText(object.getListaCompra()+" Lista de compra");
-        favoritoTxt.setText(object.getFavorito()+" Favorito");
-        precoTotalTxt.setText("R$ " + Math.round(numOrdem * object.getTaxa()));
+        estrelaTxt.setText(object.getEstrela() + "");
 
+        plusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                numOrdem=numOrdem + 1;
+                numOrdemTxt.setText(String.valueOf(numOrdem));
+                precoTotalTxt.setText(String.valueOf(numOrdem * object.getTaxa()));
+            }
+        });
 
-     plusBtn.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-             numOrdem = numOrdem + 1;
-             numOrdemTxt.setText(String.valueOf(numOrdem));
-             precoTotalTxt.setText("R$ " + Math.round(numOrdem * object.getTaxa()));
-         }
-     });
+        minusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (numOrdem > 1) {
+                    numOrdem = numOrdem - 1;
+                }
+                numOrdemTxt.setText(String.valueOf(numOrdem));
+                precoTotalTxt.setText(String.valueOf(numOrdem * object.getTaxa()));
+            }
+        });
 
-     minusBtn.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-             if (numOrdem>1){
-                 numOrdem = numOrdem - 1;
-             }
-             numOrdemTxt.setText(String.valueOf(numOrdem));
-             precoTotalTxt.setText("R$ " + Math.round(numOrdem * object.getTaxa()));
-         }
-     });
-
-     addToCarBtn.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-             object.setNumeroNoCarrinho(numOrdem);
-             managementCart.insertItem(object);
-         }
-     });
+        addToCarBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                object.setNumeroNoCarrinho(numOrdem);
+                managementCart.insertItem(object);
+            }
+        });
     }
 
     private void initView() {
         addToCarBtn = findViewById(R.id.addToCarBtn);
         tituloTxt = findViewById(R.id.tituloTxt);
         taxaTxt = findViewById(R.id.precoTxt);
-        descricaoTxt = findViewById(R.id.descricaoTxt);
+        descricaoTxt = findViewById(R.id.descricaotxt );
         numOrdemTxt = findViewById(R.id.numeroItemTxt);
         plusBtn = findViewById(R.id.plusCardBtn);
         minusBtn = findViewById(R.id.minusCardBtn);

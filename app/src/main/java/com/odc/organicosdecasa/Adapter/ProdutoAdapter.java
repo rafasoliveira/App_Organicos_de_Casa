@@ -1,5 +1,6 @@
 package com.odc.organicosdecasa.Adapter;
 
+
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.odc.organicosdecasa.Activity.ShowDetailActivity;
 import com.odc.organicosdecasa.Domain.ItemDomain;
 import com.odc.organicosdecasa.R;
+
 
 import java.util.ArrayList;
 
@@ -38,20 +40,28 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
         holder.taxa.setText(String.valueOf(ProdutoDomains.get(position).getTaxa()));
 
 
-        int drawableReourceId = holder.itemView.getContext().getResources()
+        int drawableResourceId = holder.itemView.getContext().getResources()
                 .getIdentifier(ProdutoDomains.get(position).getPic(),"drawable",
                         holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
-                .load(drawableReourceId)
+                .load(drawableResourceId)
                 .into(holder.pic);
 
-        holder.addBtn.setOnClickListener(v -> {
+        holder.addBtn.setOnClickListener( v -> {
             Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
-            intent.putExtra("objet", ProdutoDomains.get(position));
+            intent.putExtra("object",ProdutoDomains.get(position));
             holder.itemView.getContext().startActivity(intent);
         });
+
+        holder.pic.setOnClickListener( v -> {
+            Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
+            intent.putExtra("object", ProdutoDomains.get(position));
+            holder.itemView.getContext().startActivity(intent);
+        } );
+
     }
+
 
     @Override
     public int getItemCount() { return ProdutoDomains.size(); }

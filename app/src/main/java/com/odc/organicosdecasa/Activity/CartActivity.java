@@ -101,7 +101,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void calcularCarrinho() {
-        double percentTaxa = 0.02;   //se necessário alterar este item para o preço do imposto/taxa
+        double percentTaxa = 0.00;   //se necessário alterar este item para o preço do imposto/taxa
         double entrega = 10.00;        // se necessário alterar este item, preço da frete/entrega
 
         taxa = Math.round((managementCart.getTotalTaxa() * percentTaxa) * 100.0)/100.0;

@@ -19,7 +19,7 @@
     <string name="txtMeuCarrinho">Meu Carrinho</string>
     <string name="txtTotaldeItens">Total de Itens</string>
     <string name="txtCarrinhoVazio">Seu carrinho está vazio!</string>
-    <string name="txtDescricao">Descrição</string>
+    <string name="txtDescricao">Descrição:</string>
     <string name="txtPrecoTotal">Preço Total</string>
     <string name="txtAdicionar">Adicionar</string>
     <string name="txtFavorito">Favorito</string>

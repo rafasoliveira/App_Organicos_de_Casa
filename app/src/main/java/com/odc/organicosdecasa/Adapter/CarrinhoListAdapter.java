@@ -72,7 +72,7 @@ public class CarrinhoListAdapter extends RecyclerView.Adapter<CarrinhoListAdapte
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            title = itemView.findViewById(R.id.titleTxt);
+            title = itemView.findViewById(R.id.ttituloxt);
             pic = itemView.findViewById(R.id.pic);
             taxaCadaItem = itemView.findViewById(R.id.taxaCadaitem);
             totalCadaItem = itemView.findViewById(R.id.totalCadaitem);

@@ -8,18 +8,15 @@ public class ItemDomain implements Serializable {
     private String descricao;
     private Double taxa;
     private int estrela;
-    private int favorito;
-    private int listaCompra;
     private int numeroNoCarrinho;
 
-    public ItemDomain(String nome, String pic, String descricao, Double taxa, int estrela, int favorito, int listaCompra) {
+    public ItemDomain(String nome, String pic, String descricao, Double taxa, int estrela) {
         this.nome = nome;
         this.pic = pic;
         this.descricao = descricao;
         this.taxa = taxa;
         this.estrela = estrela;
-        this.favorito = favorito;
-        this.listaCompra = listaCompra;
+
     }
 
     public int getNumeroNoCarrinho() {
@@ -70,19 +67,4 @@ public class ItemDomain implements Serializable {
         this.estrela = estrela;
     }
 
-    public int getFavorito() {
-        return favorito;
-    }
-
-    public void setFavorito(int favorito) {
-        this.favorito = favorito;
-    }
-
-    public int getListaCompra() {
-        return listaCompra;
-    }
-
-    public void setListaCompra(int listaCompra) {
-        this.listaCompra = listaCompra;
-    }
 }

@@ -18,7 +18,7 @@ public class ManagementCart {
     }
 
     public void insertItem(ItemDomain item){
-        ArrayList<ItemDomain> listItem=getListCart();
+        ArrayList<ItemDomain> listItem = getListCart();
         boolean existAlready = false;
         int n = 0;
         for (int i = 0; i < listItem.size(); i++) {
