@@ -80,33 +80,33 @@ private RecyclerView recyclerViewCategoriaList, recyclerViewProdutoList;
 
         ArrayList<ItemDomain> itemList = new ArrayList<>();
 
-        itemList.add(new ItemDomain("Abacate","abacate","Abacate Breda", 6.55,5.1));
-        itemList.add(new ItemDomain("Abacaxi","abacaxi","Abacaxi Pérola",7.90,5.5));
-        itemList.add(new ItemDomain("Laranja","laranja","",1.10,3.1));
-        itemList.add(new ItemDomain("Limão","limao","",2.00,5.0));
-        itemList.add(new ItemDomain("Maça","maca","",1.00,3.4));
-        itemList.add(new ItemDomain("Morango","morango","",13.00,4.0));
+        itemList.add(new ItemDomain("Abacate Breda","abacate","Kg", 6.00,5.1));
+        itemList.add(new ItemDomain("Abacaxi Pérola","abacaxi","Unid",12.00,5.5));
+        itemList.add(new ItemDomain("Laranja","laranja","Pacote 3kg",18.90,3.1));
+        itemList.add(new ItemDomain("Limão","limao","Kg",5.00,5.00));
+        itemList.add(new ItemDomain("Maça","maca","Kg",23.00,3.40));
+        itemList.add(new ItemDomain("Morango","morango","Bandeja",6.00,4.0));
 
-        itemList.add(new ItemDomain("Cebola Roxa","cebola_roxa"," ",5.00,2.6));
-        itemList.add(new ItemDomain("Cenoura","cenoura"," ",5.00,1.8));
-        itemList.add(new ItemDomain("Mandioquinha","mandioquinha"," ",5.00,4.8));
-        itemList.add(new ItemDomain("Milho Verde","milho_verde","",5.00,3.9));
-        itemList.add(new ItemDomain("Moranga","moranga","",0.0,2.7));
-        itemList.add(new ItemDomain("Pimentão Verde","pimentao_verde","",5.00,3.0));
-        itemList.add(new ItemDomain("Rabanete","rabanete","",0.0,1.9));
-        itemList.add(new ItemDomain("Tomate","tomate","Tomate vermelho fresco",5.00,3.1));
+        itemList.add(new ItemDomain("Cebola Roxa","cebola_roxa","400g",7.99,2.6));
+        itemList.add(new ItemDomain("Cenoura","cenoura","600g",11.60,2.8));
+        itemList.add(new ItemDomain("Mandioquinha","mandioquinha","500g",10.00,4.8));
+        itemList.add(new ItemDomain("Milho Verde","milho_verde","Bandeja 700g",7.50,3.9));
+        itemList.add(new ItemDomain("Moranga","moranga","Kg",10.0,2.7));
+        itemList.add(new ItemDomain("Pimentão Verde","pimentao_verde","Kg",9.00,3.0));
+        itemList.add(new ItemDomain("Rabanete","rabanete","Kg",5.0,1.9));
+        itemList.add(new ItemDomain("Tomate Italiano","tomate","Kg",5.00,3.1));
 
-        itemList.add(new ItemDomain("Alface Crespa","alface_crespa","",4.00,4.4));
-        itemList.add(new ItemDomain("Cebolinha","cebolinha","",3.00,5.0));
-        itemList.add(new ItemDomain("Couve","couve","",5.00,4.2));
-        itemList.add(new ItemDomain("Salsa","salsa","Salva Maço",3.00,5.0));
+        itemList.add(new ItemDomain("Alface Crespa","alface_crespa","Unid",5.50,4.4));
+        itemList.add(new ItemDomain("Cebolinha","cebolinha","Maço",2.50,5.0));
+        itemList.add(new ItemDomain("Couve","couve","Maço",2.50,4.2));
+        itemList.add(new ItemDomain("Salsa","salsa","Maço",2.50,5.0));
 
-        itemList.add(new ItemDomain("Café Torrado","cafe_torrado","",3.00,3.5));
-        itemList.add(new ItemDomain("Ervilha","ervilha","",3.00,4.0));
-        itemList.add(new ItemDomain("Feijao Carioca","feijao_carioca","",8.00,5.0));
-        itemList.add(new ItemDomain("Feijao Preto","feijao_preto","",7.00,4.6));
-        itemList.add(new ItemDomain("Grao de Bico","grao_bico","",3.00,2.4));
-        itemList.add(new ItemDomain("Lentilha","lentilha","",2.00,3.2));
+        itemList.add(new ItemDomain("Café Torrado","cafe_torrado","250g",10.00,3.5));
+        itemList.add(new ItemDomain("Ervilha","ervilha","500g",14.99,4.0));
+        itemList.add(new ItemDomain("Feijão Carioca","feijao_carioca","Kg",12.50,5.0));
+        itemList.add(new ItemDomain("Feijão Preto","feijao_preto","Kg",10.00,4.6));
+        itemList.add(new ItemDomain("Grão de Bico","grao_bico","Kg",19.90,2.4));
+        itemList.add(new ItemDomain("Lentilha","lentilha","500g",12.60,3.2));
 
 
         adapter2 = new ProdutoAdapter(itemList);
