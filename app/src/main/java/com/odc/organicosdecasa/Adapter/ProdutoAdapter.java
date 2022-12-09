@@ -17,10 +17,15 @@ import com.odc.organicosdecasa.Domain.ItemDomain;
 import com.odc.organicosdecasa.R;
 
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHolder> {
     ArrayList<ItemDomain> ProdutoDomains;
+
+    Locale localeBR = new Locale("pt","BR");
+    NumberFormat nf = NumberFormat.getCurrencyInstance( localeBR );
 
     public ProdutoAdapter(ArrayList<ItemDomain> ProdutoDomains) {
         this.ProdutoDomains = ProdutoDomains;
@@ -37,7 +42,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(ProdutoDomains.get(position).getNome());
-        holder.taxa.setText(String.valueOf(ProdutoDomains.get(position).getTaxa()));
+        holder.taxa.setText(nf.format((ProdutoDomains.get(position).getTaxa())));
 
 
         int drawableResourceId = holder.itemView.getContext().getResources()

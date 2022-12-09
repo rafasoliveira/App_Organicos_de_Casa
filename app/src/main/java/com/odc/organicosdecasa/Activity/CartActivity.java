@@ -16,7 +16,8 @@ import com.odc.organicosdecasa.Helper.ManagementCart;
 import com.odc.organicosdecasa.Interface.ChangeNumberItemsListener;
 import com.odc.organicosdecasa.R;
 
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class CartActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
@@ -25,7 +26,9 @@ public class CartActivity extends AppCompatActivity {
     private TextView totalTaxaTxt, taxaTxt, entregaTxt, totalTxt, vazioTxt;
     private Double taxa;
     private ScrollView scrollView;
-    DecimalFormat df = new DecimalFormat("#,##0.00");
+
+    Locale localeBR = new Locale("pt","BR");
+    NumberFormat nf = NumberFormat.getCurrencyInstance( localeBR );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +60,7 @@ public class CartActivity extends AppCompatActivity {
         seachBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartActivity.this, MainActivity.class));
+                //startActivity(new Intent(CartActivity.this, MainActivity.class));
             }
         });
 
@@ -71,7 +74,7 @@ public class CartActivity extends AppCompatActivity {
         scheduleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartActivity.this, MainActivity.class));
+                //startActivity(new Intent(CartActivity.this, MainActivity.class));
             }
         });
 
@@ -105,16 +108,16 @@ public class CartActivity extends AppCompatActivity {
 
     private void calcularCarrinho() {
         double percentTaxa = 0.00;   //se necessário alterar este item para o preço do imposto/taxa
-        double entrega = 0.00;        // se necessário alterar este item, preço da frete/entrega
+        double entrega = 0.00;        // se necessário alterar este item, preço do frete/entrega
 
-        taxa = Math.round((managementCart.getTotalTaxa() * percentTaxa) * 100.0)/100.0;
-        double total = Math.round((managementCart.getTotalTaxa() + taxa + entrega) * 100.0)/100.0;
-        double itemTotal = Math.round((managementCart.getTotalTaxa()*100.0)/100.0);
+        taxa = (managementCart.getTotalTaxa() * percentTaxa) * 100.0/100.0;
+        double total = (managementCart.getTotalTaxa() + taxa + entrega) * 100.0/100.0;
+        double itemTotal = (managementCart.getTotalTaxa() * 100.0/100.0);
 
-        totalTaxaTxt.setText("R$ " + df.format(itemTotal));
-        taxaTxt.setText("R$ " + df.format(taxa));
-        entregaTxt.setText("R$ " + df.format(entrega));
-        totalTxt.setText("R$ " + df.format(total));
+        totalTaxaTxt.setText(nf.format(itemTotal));
+        taxaTxt.setText( nf.format(taxa));
+        entregaTxt.setText(nf.format(entrega));
+        totalTxt.setText(nf.format(total));
     }
 
     private void initView() {

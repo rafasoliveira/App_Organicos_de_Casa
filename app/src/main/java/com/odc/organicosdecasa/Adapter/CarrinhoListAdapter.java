@@ -16,12 +16,17 @@ import com.odc.organicosdecasa.Helper.ManagementCart;
 import com.odc.organicosdecasa.Interface.ChangeNumberItemsListener;
 import com.odc.organicosdecasa.R;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CarrinhoListAdapter extends RecyclerView.Adapter<CarrinhoListAdapter.ViewHolder> {
     ArrayList<ItemDomain> listItemSelecionado;
     private ManagementCart managementCart;
     ChangeNumberItemsListener changeNumberItemsListener;
+
+    Locale localeBR = new Locale("pt","BR");
+    NumberFormat nf = NumberFormat.getCurrencyInstance( localeBR );
 
     public CarrinhoListAdapter(ArrayList<ItemDomain> listItemSelecionado, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
         this.listItemSelecionado = listItemSelecionado;
@@ -40,16 +45,16 @@ public class CarrinhoListAdapter extends RecyclerView.Adapter<CarrinhoListAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(listItemSelecionado.get(position).getNome());
-        holder.taxaCadaItem.setText("R$ " + listItemSelecionado.get(position).getTaxa());
-        holder.totalCadaItem.setText("R$ " + Math.round((listItemSelecionado.get(position).getNumeroNoCarrinho() * listItemSelecionado.get(position).getTaxa())));
+        holder.taxaCadaItem.setText(nf.format(listItemSelecionado.get(position).getTaxa()));
+        holder.totalCadaItem.setText(nf.format((listItemSelecionado.get(position).getNumeroNoCarrinho() * listItemSelecionado.get(position).getTaxa())));
         holder.num.setText(String.valueOf(listItemSelecionado.get(position).getNumeroNoCarrinho()));
 
 
-        int drawableReourceId = holder.itemView.getContext().getResources()
+        int drawableResourceId = holder.itemView.getContext().getResources()
                 .getIdentifier(listItemSelecionado.get(position).getPic(),"drawable",
                         holder.itemView.getContext().getPackageName());
 
-        Glide.with(holder.itemView.getContext()).load(drawableReourceId).into(holder.pic);
+        Glide.with(holder.itemView.getContext()).load(drawableResourceId).into(holder.pic);
 
         holder.plusItem.setOnClickListener(v -> managementCart.plusNumberItem(listItemSelecionado, position, () -> {
             notifyDataSetChanged();
