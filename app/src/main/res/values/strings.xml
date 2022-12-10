@@ -4,7 +4,9 @@
     <string name="txtEmail">Email</string>
     <string name="txtSenha">Senha</string>
     <string name="txtEntrar">Entrar</string>
-    <string name="txtCadastreSe">Cadastre-se aqui!</string>
+    <string name="txtEsqueceuSenha">Esqueceu a senha?</string>
+    <string name="txtNaoTemConta">Não tem conta?</string>
+    <string name="txtCadastreSe">Cadastre-se.</string>
     <string name="txtOferta1">35% de desconto</string>
     <string name="txtOferta2">01 Nov - 31 Dez</string>
     <string name="txtBarSearch">Pesquisar produto favorito</string>
