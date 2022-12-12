@@ -31,44 +31,44 @@ private RecyclerView recyclerViewCategoriaList, recyclerViewProdutoList;
         }
 
     private void bottomNavigation() {
-        LinearLayout homeBtn = findViewById(R.id.homeBtn);
-        LinearLayout seachBtn = findViewById(R.id.seachBtn);
-        LinearLayout carBtn = findViewById(R.id.carBtn);
-        LinearLayout scheduleBtn = findViewById(R.id.scheduleBtn);
-        LinearLayout profileBtn = findViewById(R.id.profileBtn);
+        LinearLayout inicioBtn = findViewById(R.id.homeBtn);
+        LinearLayout pesquisarBtn = findViewById(R.id.searchBtn);
+        LinearLayout carrinhoBtn = findViewById(R.id.cartBtn);
+        LinearLayout listarBtn = findViewById(R.id.checklistBtn);
+        LinearLayout perfilBtn = findViewById(R.id.profileBtn );
 
-        homeBtn.setOnClickListener(new View.OnClickListener() {
+        inicioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, MainActivity.class));
             }
         });
 
-        seachBtn.setOnClickListener(new View.OnClickListener() {
+        pesquisarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(MainActivity.this, MainActivity.class));
             }
         });
 
-        carBtn.setOnClickListener(new View.OnClickListener() {
+        carrinhoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, CartActivity.class));
             }
         });
 
-        scheduleBtn.setOnClickListener(new View.OnClickListener() {
+        listarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(MainActivity.this, MainActivity.class));
+                startActivity(new Intent(MainActivity.this, ListasActivity.class));
             }
         });
 
-        profileBtn.setOnClickListener(new View.OnClickListener() {
+        perfilBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FormLogin.class));
+                startActivity(new Intent(MainActivity.this, FormLoginActivity.class));
             }
         });
     }
@@ -82,7 +82,7 @@ private RecyclerView recyclerViewCategoriaList, recyclerViewProdutoList;
 
         itemList.add(new ItemDomain("Abacate Breda","abacate","Kg", 6.00,5.1));
         itemList.add(new ItemDomain("Abacaxi Pérola","abacaxi","Unid",12.00,5.5));
-        itemList.add(new ItemDomain("Laranja","laranja","Pacote 3kg",18.90,3.1));
+        itemList.add(new ItemDomain("Laranja Lima","laranja","Pacote 3kg",18.90,3.1));
         itemList.add(new ItemDomain("Limão","limao","Kg",5.00,5.00));
         itemList.add(new ItemDomain("Maça","maca","Kg",23.00,3.40));
         itemList.add(new ItemDomain("Morango","morango","Bandeja",6.00,4.0));

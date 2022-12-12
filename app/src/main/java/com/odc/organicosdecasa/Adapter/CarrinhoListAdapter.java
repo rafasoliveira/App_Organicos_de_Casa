@@ -65,6 +65,7 @@ public class CarrinhoListAdapter extends RecyclerView.Adapter<CarrinhoListAdapte
             notifyDataSetChanged();
             changeNumberItemsListener.changed();
         }));
+
     }
 
     @Override
@@ -72,7 +73,7 @@ public class CarrinhoListAdapter extends RecyclerView.Adapter<CarrinhoListAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView title, taxaCadaItem;
-        ImageView pic, plusItem, minusItem;
+        ImageView pic, plusItem, minusItem, lixeira;
         TextView totalCadaItem, num;
 
         public ViewHolder(@NonNull View itemView){
@@ -84,6 +85,8 @@ public class CarrinhoListAdapter extends RecyclerView.Adapter<CarrinhoListAdapte
             plusItem = itemView.findViewById(R.id.plusCardBtn);
             minusItem = itemView.findViewById(R.id.minusCardBtn);
             num = itemView.findViewById(R.id.numeroItemTxt);
+            lixeira = itemView.findViewById(R.id.imageLixeira);
+
 
         }
     }

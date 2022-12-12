@@ -3,7 +3,7 @@
 
     <style name="ContainerLogo">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">65dp</item>
+        <item name="android:layout_height">72dp</item>
 
     </style>
 
@@ -24,7 +24,7 @@
     <style name="ContainerComponents">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">280dp</item>
-        <item name="android:background">@drawable/container_components</item>
+
         <item name="android:layout_margin">20dp</item>
     </style>
 

@@ -42,6 +42,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(ProdutoDomains.get(position).getNome());
+        holder.descricao.setText(ProdutoDomains.get(position).getDescricao());
         holder.taxa.setText(nf.format((ProdutoDomains.get(position).getTaxa())));
 
 
@@ -63,7 +64,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
             Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
             intent.putExtra("object", ProdutoDomains.get(position));
             holder.itemView.getContext().startActivity(intent);
-        } );
+        });
 
     }
 
@@ -72,14 +73,15 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
     public int getItemCount() { return ProdutoDomains.size(); }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title, taxa;
+        TextView title, taxa, descricao;
         ImageView pic;
         ImageView addBtn;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            title = itemView.findViewById(R.id.title);
             pic = itemView.findViewById(R.id.pic);
+            title = itemView.findViewById(R.id.title);
+            descricao = itemView.findViewById(R.id.txtDescricao);
             taxa = itemView.findViewById(R.id.taxa);
             addBtn = itemView.findViewById(R.id.addBtn);
         }

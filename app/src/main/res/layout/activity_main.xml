@@ -9,11 +9,44 @@
     android:focusableInTouchMode="true"
     tools:context=".Activity.MainActivity">
 
+    <View
+        android:id="@+id/containerLogo"
+        style="@style/ContainerLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_Logo"
+        android:layout_width="172dp"
+        android:layout_height="46dp"
+        android:src="@drawable/odclogo_linhatransp"
+        app:layout_constraintEnd_toEndOf="@+id/containerLogo"
+        app:layout_constraintStart_toStartOf="@id/containerLogo"
+        app:layout_constraintTop_toTopOf="@id/containerLogo" />
+
+    <TextView
+        android:id="@+id/txt_saudacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="@string/txtSaudacao"
+        android:textColor="@color/greenodc"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/image_Logo"
+        app:layout_constraintStart_toStartOf="@+id/image_Logo"
+        app:layout_constraintTop_toBottomOf="@id/image_Logo" />
+
     <ScrollView
         android:id="@+id/scrollView1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:ignore="MissingConstraints">
+        android:layout_width="411dp"
+        android:layout_height="702dp"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorNavegacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerLogo"
+        tools:layout_constraintTop_toBottomOf="@id/containerLogo">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,52 +57,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <View
-                    android:id="@+id/containerLogo"
-                    style="@style/ContainerLogo"
-                    tools:ignore="MissingConstraints" />
-
-                <ImageView
-                    android:id="@+id/image_Logo"
-                    android:layout_width="172dp"
-                    android:layout_height="46dp"
-                    android:src="@drawable/odclogo_linhatransp"
-                    app:layout_constraintEnd_toEndOf="@+id/containerLogo"
-                    app:layout_constraintStart_toStartOf="@+id/containerLogo"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txt_saudacao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:fontFamily="casual"
-                    android:text="@string/txtSaudacao"
-                    android:textColor="@color/greenodc"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/containerLogo"
-                    app:layout_constraintTop_toBottomOf="@+id/image_Logo" />
-
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:id="@+id/constraintLayout1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/containerLogo"
-                    app:layout_constraintTop_toBottomOf="@id/txt_saudacao">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/containerLogo">
 
                     <ImageView
                         android:id="@+id/imgBanner"
-                        android:layout_width="0dp"
+                        android:layout_width="335dp"
                         android:layout_height="150dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/odcbanner2_2"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintCircleRadius="30dp"
-                        app:layout_constraintEnd_toEndOf="@+id/viewBanner"
-                        app:layout_constraintStart_toStartOf="@id/viewBanner"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout2"
+                        android:layout_width="365dp"
+                        android:layout_height="170dp"
+                        android:background="@drawable/container_components"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
                         android:id="@+id/txt_oferta1"
@@ -79,7 +98,7 @@
                         android:layout_marginEnd="40dp"
                         android:text="@string/txtOferta1"
                         android:textColor="#ffffff"
-                        android:textSize="18dp"
+                        android:textSize="16dp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@id/imgBanner"
                         app:layout_constraintTop_toTopOf="@id/imgBanner" />
@@ -91,7 +110,7 @@
                         android:layout_marginTop="28dp"
                         android:text="@string/txtOferta2"
                         android:textColor="#FFFFFF"
-                        android:textSize="14dp"
+                        android:textSize="13dp"
                         app:layout_constraintEnd_toEndOf="@id/txt_oferta1"
                         app:layout_constraintStart_toStartOf="@+id/txt_oferta1"
                         app:layout_constraintTop_toTopOf="@id/txt_oferta1" />
@@ -101,7 +120,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/botton_banner"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/imgBanner"
                         app:layout_constraintEnd_toEndOf="@+id/txt_oferta2"
                         app:layout_constraintStart_toStartOf="@+id/txt_oferta2"
                         app:layout_constraintTop_toBottomOf="@+id/txt_oferta2">
@@ -110,14 +129,15 @@
                             android:id="@+id/txtbtnBanner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginLeft="14dp"
                             android:layout_marginTop="8dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginRight="16dp"
+                            android:layout_marginEnd="14dp"
+                            android:layout_marginRight="14dp"
                             android:layout_marginBottom="8dp"
                             android:text="Peça já"
                             android:textColor="@color/greenodc"
+                            android:textSize="14dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -129,21 +149,22 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/editTextBtnPesquisa"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/search_bt_background"
                     android:drawableStart="@drawable/ic_btn_search2"
                     android:drawablePadding="10dp"
                     android:ems="10"
-                    android:hint="@string/txtBarSearch"
+                    android:hint="@string/txtBarPesquisa"
                     android:inputType="textPersonName"
                     android:paddingStart="20dp"
                     android:textColorHint="#cdcdcd"
-                    app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
-                    app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+                    app:layout_constraintEnd_toEndOf="@+id/constraintLayout1"
+                    app:layout_constraintStart_toEndOf="@+id/constraintLayout1"
+                    app:layout_constraintStart_toStartOf="@+id/constraintLayout1"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout1" />
 
                 <TextView
                     android:id="@+id/txtTitle1"
@@ -151,11 +172,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/txtCategoria"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
+                    android:textColor="@color/greenodc"
+                    android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+                    app:layout_constraintStart_toStartOf="@+id/editTextBtnPesquisa"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextBtnPesquisa"
                     tools:layout_marginLeft="8dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -175,10 +196,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/txtProdutos"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
+                    android:textColor="@color/greenodc"
+                    android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+                    app:layout_constraintStart_toStartOf="@+id/editTextBtnPesquisa"
                     app:layout_constraintTop_toBottomOf="@+id/recyclerView1"
                     tools:layout_marginLeft="8dp" />
 
@@ -199,6 +220,7 @@
     </ScrollView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorNavegacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -243,51 +265,52 @@
                         android:id="@+id/textHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/txtHome"
+                        android:text="@string/txtInicio"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/seachBtn"
+                    android:id="@+id/searchBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageSeach"
+                        android:id="@+id/imageSearch"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
+                        android:layout_weight="1"
                         app:srcCompat="@drawable/ic_btn_search" />
 
                     <TextView
-                        android:id="@+id/textSeach"
+                        android:id="@+id/textSearch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/txtSearch"
+                        android:text="@string/txtPesquisa"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/carBtn"
+                    android:id="@+id/cartBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageCar"
+                        android:id="@+id/imageCart"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_btn_cart" />
 
                     <TextView
-                        android:id="@+id/textCar"
+                        android:id="@+id/textCart"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/txtCarrinho"
@@ -297,24 +320,24 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/scheduleBtn"
+                    android:id="@+id/checklistBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageSchedule"
+                        android:id="@+id/imageCkecklist"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_btn_calendar" />
+                        app:srcCompat="@drawable/ic_btn_checklist2" />
 
                     <TextView
-                        android:id="@+id/textSchedule"
+                        android:id="@+id/textChecklist"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/txtSchedule"
+                        android:text="@string/txtListas"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
@@ -338,7 +361,7 @@
                         android:id="@+id/textProfile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/txtProfile"
+                        android:text="@string/txtPerfil"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="12sp" />

@@ -1,10 +1,9 @@
 package com.odc.organicosdecasa.Domain;
 
 import java.io.Serializable;
-import java.text.DecimalFormat;
 
 public class ItemDomain implements Serializable {
-    DecimalFormat df = new DecimalFormat("#,##0.00");
+
     private String nome;
     private String pic;
     private String descricao;

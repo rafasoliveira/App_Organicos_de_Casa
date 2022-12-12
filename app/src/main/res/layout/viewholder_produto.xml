@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:background="@drawable/background_produto_btn">
+    android:layout_margin="8dp">
 
     <ImageView
         android:id="@+id/pic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
@@ -27,11 +26,33 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/pic"
         app:layout_constraintStart_toStartOf="@+id/pic"
         app:layout_constraintTop_toBottomOf="@+id/pic" />
+
+    <TextView
+        android:id="@+id/txtDescricao"
+        android:layout_width="155dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/card_background"
+        android:hint="@string/txtDescricao"
+        android:inputType="textMultiLine|text"
+        android:maxLength="50"
+        android:padding="10dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textColorHint="@color/teal_700"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        app:autoSizeMaxTextSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/pic"
+        app:layout_constraintStart_toStartOf="@+id/pic"
+        app:layout_constraintTop_toBottomOf="@+id/addBtn" />
 
     <TextView
         android:id="@+id/taxa"
@@ -39,11 +60,11 @@
         android:layout_height="wrap_content"
         android:text="R$ 0.00"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/addBtn"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescricao"
         app:layout_constraintEnd_toStartOf="@+id/addBtn"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@+id/pic"
         app:layout_constraintTop_toTopOf="@+id/addBtn" />
 
@@ -51,13 +72,10 @@
         android:id="@+id/addBtn"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/circulo_up" />
 </androidx.constraintlayout.widget.ConstraintLayout>

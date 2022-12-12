@@ -3,6 +3,7 @@ package com.odc.organicosdecasa.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ public class CartActivity extends AppCompatActivity {
     private TextView totalTaxaTxt, taxaTxt, entregaTxt, totalTxt, vazioTxt;
     private Double taxa;
     private ScrollView scrollView;
+    private ImageView lixeira;
 
     Locale localeBR = new Locale("pt","BR");
     NumberFormat nf = NumberFormat.getCurrencyInstance( localeBR );
@@ -44,46 +46,45 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void bottomNavigation() {
-        LinearLayout homeBtn = findViewById(R.id.homeBtn);
-        LinearLayout seachBtn = findViewById(R.id.seachBtn);
-        LinearLayout carBtn = findViewById(R.id.carBtn);
-        LinearLayout scheduleBtn = findViewById(R.id.scheduleBtn);
-        LinearLayout profileBtn = findViewById(R.id.profileBtn);
+        LinearLayout inicioBtn = findViewById(R.id.homeBtn);
+        LinearLayout pesquisarBtn = findViewById(R.id.searchBtn);
+        LinearLayout carrinhoBtn = findViewById(R.id.cartBtn);
+        LinearLayout listarBtn = findViewById(R.id.checklistBtn);
+        LinearLayout perfilBtn = findViewById(R.id.profileBtn);
 
-        homeBtn.setOnClickListener(new View.OnClickListener() {
+        inicioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CartActivity.this, MainActivity.class));
             }
         });
 
-        seachBtn.setOnClickListener(new View.OnClickListener() {
+        pesquisarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(CartActivity.this, MainActivity.class));
             }
         });
 
-        carBtn.setOnClickListener(new View.OnClickListener() {
+        carrinhoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CartActivity.this, CartActivity.class));
             }
         });
 
-        scheduleBtn.setOnClickListener(new View.OnClickListener() {
+        listarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(CartActivity.this, MainActivity.class));
+                startActivity(new Intent(CartActivity.this, ListasActivity.class));
             }
         });
-
-        profileBtn.setOnClickListener(new View.OnClickListener() {
+        perfilBtn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartActivity.this, FormLogin.class));
+                startActivity(new Intent(CartActivity.this, FormLoginActivity.class));
             }
-        });
+        } );
     }
 
     private void initList() {
@@ -128,6 +129,7 @@ public class CartActivity extends AppCompatActivity {
         recyclerViewList = findViewById(R.id.view);
         scrollView = findViewById(R.id.scrollView);
         vazioTxt = findViewById(R.id.vazioTxt);
+        lixeira = findViewById(R.id.imageLixeira);
 
     }
 }

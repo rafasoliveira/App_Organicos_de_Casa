@@ -1,27 +1,563 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="@color/greenclean"
+    tools:context=".Activity.FormCadastroActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConstraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background"
-        tools:context=".Activity.FormCadastro">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout7"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="@string/telaCadastro"
-            android:textSize="30sp"
-            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:elevation="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/ConstraintLayout2"
+            app:layout_constraintStart_toStartOf="@+id/ConstraintLayout2"
+            app:layout_constraintTop_toTopOf="@+id/ConstraintLayout2">
+
+            <TextView
+                android:id="@+id/textCadastro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/txtCadastro"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="16dp"
+            app:elevation="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp"
+                tools:layout_weight="1">
+
+                <Button
+                    android:id="@+id/buttonPF"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_btn_person"
+                    android:text="Pessoa Física"
+                    android:textColor="@color/greenclean"
+                    android:textSize="11sp"
+                    app:backgroundTint="@color/greenodc"
+                    app:cornerRadius="7dp"
+                    app:elevation="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp"
+                tools:layout_weight="1">
+
+                <Button
+                    android:id="@+id/buttonPJ"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_btn_pj"
+                    android:text="Pessoa Jurídica"
+                    android:textColor="@color/greenclean"
+                    android:textSize="11sp"
+                    app:backgroundTint="@color/greenodc"
+                    app:cornerRadius="7dp"
+                    app:elevation="20dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout2">
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/greenodc" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="714dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConstraintLayout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/txtEmail"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:ems="10"
+                    android:hint="seu@email.com"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/greenodc"
+                    android:textColorHint="#C8E6C9"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutSenha"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewSenha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Senha"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextSenha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:ems="10"
+                    android:hint="@string/txtSenha"
+                    android:inputType="textPassword"
+                    android:textColor="@color/greenodc"
+                    android:textColorHint="#C8E6C9"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutNomeSobrenome"
+                android:layout_width="match_parent"
+                android:layout_height="97dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewNome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Nome"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextNome"
+                        android:layout_width="124dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:ems="10"
+                        android:hint="Nome"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/greenodc"
+                        android:textColorHint="#C8E6C9"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="530dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSobrenome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Sobrenome"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextSobrenome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:ems="10"
+                        android:hint="Sobrenome"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/greenodc"
+                        android:textColorHint="#C8E6C9"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutAniverCelular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewDtNasc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Aniversário"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextDtNasc"
+                        android:layout_width="124dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:ems="10"
+                        android:hint="DD/MM/AAAA"
+                        android:inputType="date"
+                        android:textColor="@color/greenodc"
+                        android:textColorHint="#C8E6C9"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="530dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewCelular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Celular"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextCelular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:ems="10"
+                        android:hint="(00) 00000 0000"
+                        android:inputType="phone"
+                        android:textColor="@color/greenodc"
+                        android:textColorHint="#C8E6C9"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutCEP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewCEP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="15dp"
+                    android:text="CEP"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextCEP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:ems="10"
+                    android:hint="00000-000"
+                    android:inputType="textPostalAddress|textEmailAddress"
+                    android:textColor="@color/greenodc"
+                    android:textColorHint="#C8E6C9"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutEnderecoNum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewEndereco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Endereço"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextEndereco"
+                        android:layout_width="291dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:ems="10"
+                        android:hint="Rua, Avenida, Travessa"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/greenodc"
+                        android:textColorHint="#C8E6C9"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewNumEndereco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Nº"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextNumEndereco"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:ems="10"
+                        android:hint="Numero"
+                        android:inputType="number"
+                        android:textColor="@color/greenodc"
+                        android:textColorHint="#C8E6C9"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutComplemento"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewComplemento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Complemento"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextComplemento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:ems="10"
+                    android:inputType="textShortMessage"
+                    android:textColor="@color/greenodc"
+                    android:textColorHint="#C8E6C9"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutCidadeUF"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewCidade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Cidade"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextCidade"
+                        android:layout_width="291dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:ems="10"
+                        android:hint="Cidade"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/greenodc"
+                        android:textColorHint="#C8E6C9"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewUF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="15dp"
+                        android:text="UF"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextUF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:ems="10"
+                        android:hint="UF"
+                        android:inputType="textPersonName"
+                        android:maxLength="2"
+                        android:textColor="@color/greenodc"
+                        android:textColorHint="#C8E6C9"
+                        android:textSize="15dp"
+                        tools:textAllCaps="true" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutBairro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewBairro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Bairro"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextBairro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:ems="10"
+                    android:hint="Bairro"
+                    android:inputType="text"
+                    android:textColor="@color/greenodc"
+                    android:textColorHint="#C8E6C9"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

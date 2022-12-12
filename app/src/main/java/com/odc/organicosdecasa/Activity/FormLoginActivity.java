@@ -9,33 +9,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.odc.organicosdecasa.R;
 
-public class FormLogin extends AppCompatActivity {
-
-
-    private TextView text_TelaCadastro;
+public class FormLoginActivity extends AppCompatActivity {
+    private TextView text_telaCadastro;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form_login);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_form_login );
 
         IniciarComponentes();
 
-        text_TelaCadastro.setOnClickListener(new View.OnClickListener() {
+        text_telaCadastro.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(FormLogin.this, FormCadastro.class);
-                startActivity(intent);
-
+                startActivity(new Intent(FormLoginActivity.this, FormCadastroActivity.class));
             }
-        });
-    }
+        } );
+}
 
     private void IniciarComponentes(){
-        text_TelaCadastro = findViewById(R.id.text_telaCadastro2);
+        text_telaCadastro = findViewById(R.id.text_telaCadastro2);
     }
-
-
 }

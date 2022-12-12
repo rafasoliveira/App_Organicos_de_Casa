@@ -1,12 +1,12 @@
 package com.odc.organicosdecasa.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.odc.organicosdecasa.R;
 
-public class FormCadastro extends AppCompatActivity {
+public class FormCadastroActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

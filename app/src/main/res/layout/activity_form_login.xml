@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
-        tools:context=".Activity.FormLogin"
+        tools:context=".Activity.FormLoginActivity"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="7dp">
 
@@ -33,7 +33,7 @@
             app:layout_constraintTop_toBottomOf="@id/image_Logo" />
 
         <EditText
-            android:id="@+id/edit_email"
+            android:id="@+id/username"
             style="@style/Edit_Text"
             android:drawableRight="@drawable/ic_email"
             android:hint="@string/txtEmail"
@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="@id/containerComponents" />
 
         <EditText
-            android:id="@+id/edit_senha"
+            android:id="@+id/password"
             style="@style/Edit_Text"
             android:drawableRight="@drawable/ic_eye"
             android:hint="@string/txtSenha"
@@ -53,7 +53,7 @@
             android:textColorHint="@color/brownwood"
             app:layout_constraintEnd_toEndOf="@id/containerComponents"
             app:layout_constraintStart_toStartOf="@id/containerComponents"
-            app:layout_constraintTop_toBottomOf="@+id/edit_email" />
+            app:layout_constraintTop_toBottomOf="@+id/username" />
 
         <TextView
             android:id="@+id/txtEsqueceuSenha"
@@ -66,12 +66,12 @@
             android:textColor="@color/brownwood"
             android:textSize="15sp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toTopOf="@+id/bt_entrar"
-            app:layout_constraintEnd_toEndOf="@+id/edit_senha"
-            app:layout_constraintTop_toBottomOf="@+id/edit_senha" />
+            app:layout_constraintBottom_toTopOf="@+id/login"
+            app:layout_constraintEnd_toEndOf="@+id/password"
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_entrar"
+            android:id="@+id/login"
             style="@style/Button"
             android:text="@string/txtEntrar"
             app:layout_constraintBottom_toBottomOf="@+id/containerComponents"
@@ -88,34 +88,55 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/containerComponents" />
 
-        <TextView
-            android:id="@+id/text_telaCadastro2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp"
-            android:gravity="center_horizontal"
-            android:text="@string/txtCadastreSe"
-            android:textColor="@color/brownwood"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/text_telaCadastro1"
-            app:layout_constraintTop_toBottomOf="@+id/progressbar" />
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressbar">
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/text_telaCadastro1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:gravity="center_horizontal"
             android:text="@string/txtNaoTemConta"
             android:textColor="@color/greenwater"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.225"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="@+id/text_telaCadastro2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressbar" />
+            app:layout_constraintTop_toTopOf="@+id/linearLayout4" />
+
+        <TextView
+            android:id="@+id/text_telaCadastro2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="187dp"
+            android:layout_marginLeft="187dp"
+            android:layout_marginEnd="73dp"
+            android:layout_marginRight="73dp"
+            android:gravity="center_horizontal"
+            android:text="@string/txtCadastreSe"
+            android:textColor="@color/browwoodclean"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout4" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
