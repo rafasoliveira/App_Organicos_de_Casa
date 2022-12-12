@@ -110,7 +110,7 @@
 
     <ScrollView
         android:layout_width="410dp"
-        android:layout_height="714dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ConstraintLayout2">
@@ -265,7 +265,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textViewDtNasc"
+                        android:id="@+id/textViewAniversario"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="22dp"
@@ -277,7 +277,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/editTextDtNasc"
+                        android:id="@+id/editTextDtAniversario"
                         android:layout_width="124dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
@@ -323,7 +323,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/LinearLayoutCEP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -556,6 +555,29 @@
                     android:textColor="@color/greenodc"
                     android:textColorHint="#C8E6C9"
                     android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutBotoes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="200dp">
+
+                <Button
+                    android:id="@+id/buttonCadastrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="80dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bt_entrar"
+                    android:gravity="center"
+                    android:text="Cadastrar"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/greenodc"
+                    app:cornerRadius="7dp" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
